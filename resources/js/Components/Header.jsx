@@ -1,14 +1,6 @@
 import React from 'react';
 import {Link} from "@inertiajs/react";
-import {
-    IconBell,
-    IconChevronDown,
-    IconDropletDollar, IconHelp,
-    IconMenu,
-    IconNotification,
-    IconPencil, IconSettings,
-    IconTree
-} from "@tabler/icons-react";
+import {IconBell, IconChevronDown, IconDropletDollar, IconHelp, IconMenu, IconSettings} from "@tabler/icons-react";
 import {cn} from "@/Lib/Utils.jsx.js";
 import {
     DropdownMenu,
@@ -30,7 +22,7 @@ import {Avatar, AvatarFallback} from "@/Components/ui/avatar.jsx";
 const Header = () => {
     return (
         <div
-            className="fixed top-0 left-0 right-0 supports-backdrop-blur:bg-background/60 border-b border-b-slate-100 bg-background/95 backdrop-blur z-20">
+            className="fixed top-0 left-0 right-0 supports-backdrop-blur:bg-background/60 border-b border-b-slate-150 bg-background/95 backdrop-blur z-20">
             <nav className="h-16 flex items-center justify-between px-5">
                 <div className="hidden md:block">
                     <Link
@@ -39,7 +31,7 @@ const Header = () => {
                         className={'inline-flex items-center gap-1'}
                     >
                         <IconDropletDollar/>
-                        <h1 className={'font-semibold'}>Akaunting<span className={'text-xl leading-none font-bold text-rose-600'}>.</span> </h1>
+                        <h1 className={'font-semibold'}>Laravel Starter<span className={'text-xl leading-none font-bold text-rose-600'}>.</span> </h1>
                     </Link>
                 </div>
                 <div className={cn("block sm:!hidden")}>
@@ -57,10 +49,10 @@ const Header = () => {
                     </Button>
                     <div className="profile-wrapper">
                         <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
+                            <DropdownMenuTrigger className={'select-none'} asChild>
                                 <Button variant="ghost" className="flex items-center outline-0 py-7 px-4 rounded-md hover:bg-slate-50 hover:border-slate-100 gap-2">
                                     <Avatar>
-                                        <AvatarFallback>AS</AvatarFallback>
+                                        <AvatarFallback className={'bg-slate-50'}>AS</AvatarFallback>
                                     </Avatar>
                                     <div className="user-wrapper hidden md:flex items-center justify-center gap-0 flex-col">
                                         <h1 className={'leading-none'}>Abd. Asis</h1>

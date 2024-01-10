@@ -1,37 +1,47 @@
 import React from 'react';
 import {cn} from "@/Lib/Utils.jsx.js";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/Components/ui/accordion";
-import {IconDashboard, IconReportMoney, IconUser} from "@tabler/icons-react";
+import {IconDashboard, IconDatabase, IconReportMoney, IconSettings, IconUser, IconUserCog} from "@tabler/icons-react";
 import DropdownItem from "@/Components/DropdownItem.jsx";
 import {Link} from "@inertiajs/react";
 import NavItem from "@/Components/NavItem.jsx";
 import SidebarMenuTitle from "@/Components/SidebarMenuTitle.jsx";
+import SimpleBar from "simplebar-react";
 
 
 const Sidebar = () => {
     return (
-        <div className={cn(`fixed hidden mt-16 bg-white h-screen border-r border-e-slate-100 pt-16 p-3 md:block w-72`)}>
-            <Accordion type="single" collapsible className="w-full">
-                <NavItem text={'Dashboard'} url={route('dashboard')}/>
-                <DropdownItem icon={<IconReportMoney className={'text-slate-800'} stroke={1.1}/>} text={'Laporan'} target={'dashboard'}>
-                    <DropdownItem.Content>
-                        <Link>Naraca</Link>
-                    </DropdownItem.Content>
-                    <DropdownItem.Content>
-                        <Link>Rugi Laba</Link>
-                    </DropdownItem.Content>
-                </DropdownItem>
-                <SidebarMenuTitle text={'Sistem'}/>
-                <DropdownItem icon={<IconUser stroke={1.2}/>} text={'Pengguna'} target={'pengguna'}>
-                    <DropdownItem.Content>
-                        <Link>Pengguna Baru</Link>
-                    </DropdownItem.Content>
-                    <DropdownItem.Content>
-                        <Link>Data Pengguna</Link>
-                    </DropdownItem.Content>
-                </DropdownItem>
-
-            </Accordion>
+        <div className={cn(`fixed hidden mt-16 bg-white overflow-hidden h-screen border-r border-e-slate-150  md:block w-72`)}>
+            <SimpleBar forceVisible="y" className={'max-h-[85vh] min-h-screen p-3 border-b border-b-slate-100'} autoHide={true}>
+                <Accordion type="single" collapsible className="w-full">
+                    <NavItem text={'Dashboard'} url={route('dashboard')}/>
+                    <DropdownItem icon={<IconDatabase className={'text-slate-800'} stroke={1.1}/>} text={'Data Master'} target={'dashboard'}>
+                        <DropdownItem.Content>
+                            <Link>Menu 1</Link>
+                        </DropdownItem.Content>
+                        <DropdownItem.Content>
+                            <Link>Menu 2</Link>
+                        </DropdownItem.Content>
+                    </DropdownItem>
+                    <SidebarMenuTitle text={'Sistem'}/>
+                    <DropdownItem icon={<IconUserCog stroke={1.2}/>} text={'Pengguna'} target={'pengguna'}>
+                        <DropdownItem.Content>
+                            <Link>Pengguna Baru</Link>
+                        </DropdownItem.Content>
+                        <DropdownItem.Content>
+                            <Link href={route('users.index')} >Data Pengguna</Link>
+                        </DropdownItem.Content>
+                    </DropdownItem>
+                    <DropdownItem icon={<IconSettings stroke={1.2}/>} text={'Pengguna'} target={'setting'}>
+                        <DropdownItem.Content>
+                            <Link>General</Link>
+                        </DropdownItem.Content>
+                        <DropdownItem.Content>
+                            <Link href={route('users.index')} >Preferensi</Link>
+                        </DropdownItem.Content>
+                    </DropdownItem>
+                </Accordion>
+            </SimpleBar>
         </div>
     );
 };
