@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('name', 'asc')->get();
+        $users = User::orderBy('name', 'asc')->paginate(request()->get('per_page') ?? 10);
         return Inertia::render('Users/Index',[
             'users' => new UserCollection($users)
         ]);

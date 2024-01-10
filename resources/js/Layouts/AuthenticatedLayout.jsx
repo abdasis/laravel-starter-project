@@ -11,7 +11,7 @@ export default function Authenticated({ user, header, children }) {
             <Header/>
             <div className="main-wrapper flex justify-start gap-1">
                 <Sidebar/>
-                <main className={'w-full mt-16 md:ms-72 p-5'}>
+                <main className={'w-full mt-16 md:ms-60 p-5'}>
                     {children}
                 </main>
                 <Toaster/>

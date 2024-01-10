@@ -50,13 +50,13 @@ const Header = () => {
                     <div className="profile-wrapper">
                         <DropdownMenu>
                             <DropdownMenuTrigger className={'select-none'} asChild>
-                                <Button variant="ghost" className="flex items-center outline-0 py-7 px-4 rounded-md hover:bg-slate-50 hover:border-slate-100 gap-2">
+                                <Button variant="ghost" className="flex group items-center focus-visible:ring-0 outline-0 py-7 px-4 rounded-md hover:bg-slate-50 hover:border-slate-100 gap-2">
                                     <Avatar>
-                                        <AvatarFallback className={'bg-slate-50'}>AS</AvatarFallback>
+                                        <AvatarFallback className={'bg-slate-50 group-hover:border group-hover:border-slate-300'}>AS</AvatarFallback>
                                     </Avatar>
                                     <div className="user-wrapper hidden md:flex items-center justify-center gap-0 flex-col">
                                         <h1 className={'leading-none'}>Abd. Asis</h1>
-                                        <small>Superadmin</small>
+                                        <small className={'font-normal text-slate-400'}>Superadmin</small>
                                     </div>
                                     <IconChevronDown className={'hidden md:block'} size={16}/>
                                 </Button>

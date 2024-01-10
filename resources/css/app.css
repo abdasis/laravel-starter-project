@@ -63,3 +63,86 @@
     background: #c7c7c7 !important;
     border-radius: 1px !important;
 }
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b4afaf;
+}
+
+/* Scrollbar Horizontal */
+/* Chrome, Safari, Opera */
+::-webkit-scrollbar-horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #c7c7c7;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #b4afaf;
+}
+
+/* Mozilla Firefox */
+/* Scrollbar Vertikal */
+/* Firefox */
+/* width for Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* Scrollbar Horizontal */
+/* Firefox */
+/* height for Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* Mozilla Firefox untuk versi lama */
+/* Scrollbar Vertikal */
+/* Firefox (versi sebelum Quantum) */
+/* width for Firefox (versi sebelum Quantum) */
+* {
+    scrollbar-width: thin;
+}
+
+*::-moz-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+*::-moz-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Scrollbar Horizontal */
+/* Firefox (versi sebelum Quantum) */
+/* height for Firefox (versi sebelum Quantum) */
+* {
+    scrollbar-width: thin;
+}
+
+*::-moz-scrollbar-thumb:horizontal {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+*::-moz-scrollbar-thumb:horizontal:hover {
+    background-color: #555;
+}
