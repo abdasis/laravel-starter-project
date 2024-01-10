@@ -5,63 +5,32 @@ import {Button} from "@/Components/ui/button.jsx";
 import {Label} from "@/Components/ui/label.jsx";
 import {Input} from "@/Components/ui/input.jsx";
 import {cn} from "@/Lib/Utils.jsx.js";
+import {Alert, AlertDescription, AlertTitle} from "@/Components/ui/alert.jsx";
+import {RocketIcon} from "@radix-ui/react-icons";
 
 const TextInput = forwardRef(function TextInput(props, ref) {
     const {label, name, errors, placeholder, help, icon, className, iconPosition = 'start', ...otherProps} = props;
     const FormHelp = (
         <Popover>
             <PopoverTrigger asChild>
-                <Button variant="outline">Open popover</Button>
+                <Button variant="ghost" className={'p-0 h-0'}>
+                    <IconHelp size={14} stroke={1}/>
+                </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-80">
-                <div className="grid gap-4">
-                    <div className="space-y-2">
-                        <h4 className="font-medium leading-none">Dimensions</h4>
-                        <p className="text-sm text-muted-foreground">
-                            Set the dimensions for the layer.
-                        </p>
-                    </div>
-                    <div className="grid gap-2">
-                        <div className="grid grid-cols-3 items-center gap-4">
-                            <Label htmlFor="width">Width</Label>
-                            <Input
-                                id="width"
-                                defaultValue="100%"
-                                className="col-span-2 h-8"
-                            />
-                        </div>
-                        <div className="grid grid-cols-3 items-center gap-4">
-                            <Label htmlFor="maxWidth">Max. width</Label>
-                            <Input
-                                id="maxWidth"
-                                defaultValue="300px"
-                                className="col-span-2 h-8"
-                            />
-                        </div>
-                        <div className="grid grid-cols-3 items-center gap-4">
-                            <Label htmlFor="height">Height</Label>
-                            <Input
-                                id="height"
-                                defaultValue="25px"
-                                className="col-span-2 h-8"
-                            />
-                        </div>
-                        <div className="grid grid-cols-3 items-center gap-4">
-                            <Label htmlFor="maxHeight">Max. height</Label>
-                            <Input
-                                id="maxHeight"
-                                defaultValue="none"
-                                className="col-span-2 h-8"
-                            />
-                        </div>
-                    </div>
+            <PopoverContent className="w-80 p-0 border-slate-100 shadow-sm">
+                <div className="pop-header text-xs font-semibold p-2 px-3 flex gap-1 border-b border-slate-100 items-center">
+                    <IconHelp size={16}/>
+                    <span>Bantuan</span>
+                </div>
+                <div className="pop-body p-2 px-3">
+                    <small>{help}</small>
                 </div>
             </PopoverContent>
         </Popover>
     );
     return (
         <Fragment>
-            <Label htmlFor={name} className="flex mb-1">
+            <Label htmlFor={name} className="flex items-center gap-1 mb-1">
                 <span>{label}</span>
                 {help && (
                     FormHelp
@@ -95,15 +64,12 @@ const TextInput = forwardRef(function TextInput(props, ref) {
                 </Fragment>
             ) : (
                 <div>
-                    <div className={`border flex ${errors ? 'is-invalid' : ''}`}>
-                        <Input
-                            placeholder={placeholder}
-                            className={`border-0 outline-0 ring-0 shadow-none ${errors ? 'is-invalid' : ''}`}
-                            id={name}
-                            name={name}
-                            {...otherProps}
-                        />
-                    </div>
+                    <Input
+                        placeholder={placeholder}
+                        id={name}
+                        name={name}
+                        {...otherProps}
+                    />
                 </div>
             )}
             {errors && <small className="text-danger">{errors}</small>}

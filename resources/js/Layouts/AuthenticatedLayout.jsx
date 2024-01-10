@@ -7,7 +7,7 @@ import 'simplebar-react/dist/simplebar.min.css';
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white overflow-hidden">
             <Header/>
             <div className="main-wrapper flex justify-start gap-1">
                 <Sidebar/>
